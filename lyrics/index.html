@@ -3,6 +3,9 @@
 <head>
   <title>Prism Sketch Vol.2 歌詞</title>
   <style>
+    body {
+      background-color:#c9c9c9cc;
+    }
     .preview {
         position: fixed;
     }
@@ -59,21 +62,21 @@
 </div>
   <div class="gallery">
     <div class="thumbnails">
-      <img src="01-08-15.png" alt="Thumbnail 1" data-fullsize="01-08-15.png">
-      <img src="02.png" alt="Thumbnail 2" data-fullsize="02.png">
-      <img src="03.png" alt="Thumbnail 2" data-fullsize="03.png">
-      <img src="04.png" alt="Thumbnail 2" data-fullsize="04.png">
-      <img src="05.png" alt="Thumbnail 2" data-fullsize="05.png">
-      <img src="06.png" alt="Thumbnail 2" data-fullsize="06.png">
-      <img src="07.png" alt="Thumbnail 2" data-fullsize="07.png">
-      <img src="09.png" alt="Thumbnail 2" data-fullsize="09.png">
-      <img src="10.png" alt="Thumbnail 2" data-fullsize="10.png">
-      <img src="11.png" alt="Thumbnail 2" data-fullsize="11.png">
-      <img src="12.png" alt="Thumbnail 2" data-fullsize="12.png">
-      <img src="13.png" alt="Thumbnail 2" data-fullsize="13.png">
-      <img src="14.png" alt="Thumbnail 2" data-fullsize="14.png">
-      <img src="00.png" alt="Thumbnail 2" data-fullsize="00.png">
-      <img src="new_12.png" alt="Thumbnail 2" data-fullsize="new_12.png">
+      <img src="01-08-15.png" alt="Thumbnail">
+      <img src="02.png" alt="Thumbnail">
+      <img src="03.png" alt="Thumbnail">
+      <img src="04.png" alt="Thumbnail">
+      <img src="05.png" alt="Thumbnail">
+      <img src="06.png" alt="Thumbnail">
+      <img src="07.png" alt="Thumbnail">
+      <img src="09.png" alt="Thumbnail">
+      <img src="10.png" alt="Thumbnail">
+      <img src="11.png" alt="Thumbnail">
+      <img src="12.png" alt="Thumbnail">
+      <img src="13.png" alt="Thumbnail">
+      <img src="14.png" alt="Thumbnail">
+      <img src="00.png" alt="Thumbnail">
+      <img src="new_12.png" alt="Thumbnail">
     </div>
   </div>
   <script>
@@ -95,9 +98,9 @@
           } else {
             modalImage.style.maxHeight = '100%';
           }
-          modalImage.src = thumbnail.dataset.fullsize;
+          modalImage.src = thumbnail.src;
         };
-        fullSizeImage.src = thumbnail.dataset.fullsize;
+        fullSizeImage.src = thumbnail.src;
         modal.style.display = 'block';
         modalOverlay.style.display = 'block';
       });
