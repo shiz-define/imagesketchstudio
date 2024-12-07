@@ -54,6 +54,18 @@
       margin-top: -1px;
       margin-right: -1px;
     }
+    
+    .tooltip {
+      position: fixed;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      z-index: 100;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      opacity: 75%;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -65,21 +77,21 @@
 </div>
   <div class="gallery">
     <div class="thumbnails">
-      <img src="01-08-15.png" alt="Thumbnail">
-      <img src="02.png" alt="Thumbnail">
-      <img src="03.png" alt="Thumbnail">
-      <img src="04.png" alt="Thumbnail">
-      <img src="05.png" alt="Thumbnail">
-      <img src="06.png" alt="Thumbnail">
-      <img src="07.png" alt="Thumbnail">
-      <img src="09.png" alt="Thumbnail">
-      <img src="10.png" alt="Thumbnail">
-      <img src="11.png" alt="Thumbnail">
-      <img src="12.png" alt="Thumbnail">
-      <img src="13.png" alt="Thumbnail">
-      <img src="14.png" alt="Thumbnail">
-      <img src="00.png" alt="Thumbnail">
-      <img src="new_12.png" alt="Thumbnail">
+      <img src="01-08-15.png" alt="Track 01. 08. 15.">
+      <img src="02.png" alt="Track 02.サクラステップ">
+      <img src="03.png" alt="Track 03.Dandelion">
+      <img src="04.png" alt="Track 04.初恋オーバードライブ">
+      <img src="05.png" alt="Track 05.五つ葉のクローバー">
+      <img src="06.png" alt="Track 06.レプリカヒーロー">
+      <img src="07.png" alt="Track 07.サイネリア">
+      <img src="09.png" alt="Track 09.Queen Of The Night">
+      <img src="10.png" alt="Track 10.キンモクセイ">
+      <img src="11.png" alt="Track 11.雅戦隊ハナレンジャー">
+      <img src="12.png" alt="Track 12.霜華">
+      <img src="13.png" alt="Track 13.Synthetic Garden">
+      <img src="14.png" alt="Track 14.君の庭の花">
+      <img src="00.png" alt="Credit(お試し).">
+      <img src="new_12.png" alt="Track 12.霜華（濃色の背景止めてみた版）">
     </div>
   </div>
   <script>
@@ -107,12 +119,26 @@
         modal.style.display = 'block';
         modalOverlay.style.display = 'block';
       });
+
+      thumbnail.addEventListener('mouseover', () => {
+        const tooltip = document.createElement('div');
+        tooltip.classList.add('tooltip'); // CSSでスタイルを定義
+        const attributeValue = thumbnail.getAttribute('alt');
+        tooltip.textContent = attributeValue;
+        thumbnail.parentNode.insertBefore(tooltip, thumbnail.nextSibling);
+      });
+
+      thumbnail.addEventListener('mouseout', () => {
+        const tooltips = document.querySelectorAll('.tooltip');
+        tooltips.forEach(tooltip => tooltip.remove());
+      });
     });
 
     preview.addEventListener('click', () => {
       modal.style.display = 'none';
       modalOverlay.style.display = 'none';
     });
+    
   </script>
 </body>
 </html>
