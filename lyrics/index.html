@@ -118,6 +118,7 @@
         fullSizeImage.src = thumbnail.src;
         modal.style.display = 'block';
         modalOverlay.style.display = 'block';
+        removeTooltip();
       });
 
       thumbnail.addEventListener('mouseover', () => {
@@ -128,10 +129,7 @@
         thumbnail.parentNode.insertBefore(tooltip, thumbnail.nextSibling);
       });
 
-      thumbnail.addEventListener('mouseout', () => {
-        const tooltips = document.querySelectorAll('.tooltip');
-        tooltips.forEach(tooltip => tooltip.remove());
-      });
+      thumbnail.addEventListener('mouseout', removeTooltip);
     });
 
     preview.addEventListener('click', () => {
@@ -140,6 +138,10 @@
       modalOverlay.style.display = 'none';
     });
     
+    function removeTooltip() {
+      const tooltips = document.querySelectorAll('.tooltip');
+      tooltips.forEach(tooltip => tooltip.remove());
+    }
   </script>
 </body>
 </html>
